@@ -1,3 +1,3 @@
 # MessageDialogIOSQml
 
-![alt tag](https://raw.githubusercontent.com/anyks/MessageDialogIOSQml/branch/img.png)
+![alt tag](https://raw.githubusercontent.com/anyks/MessageDialogIOSQml/master/img.png)
