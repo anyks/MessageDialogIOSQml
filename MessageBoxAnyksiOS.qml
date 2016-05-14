@@ -25,6 +25,7 @@ Rectangle {
 	id:				msgbox
 	anchors.fill:	parent
 	visible:		false
+	color:			"transparent"
 	z:				1000
 
 	// Задний фон
@@ -38,7 +39,7 @@ Rectangle {
 	// Всплывающий блок
 	Rectangle {
 		// Текущий размер блока
-		property real defH: (titleMsg.contentHeight + textMsg.contentHeight) * 1.6
+		property real defH: (titleMsg.contentHeight + textMsg.contentHeight) * 2
 		// Параметры блока
 		id:						msg
 		x:						((parent.width / 2) - (this.width / 2))
@@ -121,11 +122,12 @@ Rectangle {
 
 			// Верхний бордюр
 			Rectangle {
-				x: 0
-				y: 0
-				width:	parent.width
-				height:	2
-				color:	"#d9d9d9"
+				x:			0
+				y:			0
+				width:		parent.width
+				height:		2
+				color:		"#d9d9d9"
+				visible:	(dataModel.count > 1)
 			}
 
 			// Список кнопок
@@ -161,7 +163,7 @@ Rectangle {
 							anchors.margins:		5
 							minimumPointSize:		5
 							font.pointSize:			16
-							font.bold:				(model["default"] ? true : false)
+							font.bold:				(model["default"] || (dataModel.count === 1) ? true : false)
 							font.family:			"Tahoma"
 							fontSizeMode:			Text.Fit;
 							horizontalAlignment:	Text.AlignHCenter
