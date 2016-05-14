@@ -68,7 +68,7 @@ Rectangle {
 		y:						((parent.height / 2) - (this.height / 2))
 		clip:					true
 		radius:					8
-		opacity:				0.8
+		opacity:				0.9
 		width:					250
 		implicitHeight:			(defH < 135 ? 135 : defH)
 		anchors.leftMargin:		63
