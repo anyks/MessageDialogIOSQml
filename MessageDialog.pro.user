@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 3.6.1, 2016-05-14T22:37:11. -->
+<!-- Written by QtCreator 3.6.1, 2016-05-14T22:44:38. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -305,8 +305,8 @@
      <value type="int">14</value>
     </valuelist>
     <valuemap type="QVariantMap" key="Ios.device_type">
-     <value type="QString" key="displayName">iPhone 6s, iOS 9.3</value>
-     <value type="QString" key="identifier">com.apple.CoreSimulator.SimDeviceType.iPhone-6s, 9.3</value>
+     <value type="QString" key="displayName">Apple TV 1080p, iOS 9.2</value>
+     <value type="QString" key="identifier">com.apple.CoreSimulator.SimDeviceType.Apple-TV-1080p, 9.2</value>
      <value type="int" key="type">1</value>
     </valuemap>
     <valuelist type="QVariantList" key="Ios.run_arguments"/>
