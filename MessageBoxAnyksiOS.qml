@@ -4,21 +4,43 @@ import QtQuick.Controls 1.4
 // MessageBox iOS
 Rectangle {
 	// Основные переменные
-	property alias title:		titleMsg.text
-	property alias text:		textMsg.text
-	property alias buttons:		dataModel
+	property variant main
+	property alias title:	titleMsg.text
+	property alias text:	textMsg.text
 
 	// Сигналы
 	signal buttonClick (int index, string name)
 
 	// Метод отображения блока
-	function open(){
+	function open(object){
 		visible = true;
+		// Если объект блока для блокировки передан
+		if(object){
+			// Запоминаем блок для блокировки
+			main = object;
+			// Блокируем указанный блок
+			main.enabled = false;
+		}
 	}
 
 	// Метод скрытия блока
-	function close(){
+	function close(object){
 		visible = false;
+		// Если объект блока для блокировки передан
+		if(object) object.enabled = true;
+		// Разблокируем ранее запомненный блок
+		else if(main) main.enabled = true;
+	}
+
+	// Метод добавления кнопок
+	function addButtons(arr){
+		// Переходим по всему массиву
+		if(Array.isArray(arr)){
+			// Очищаем предыдущие кнопки
+			dataModel.clear();
+			// Переходим по всему массиву и добавляем кнопки
+			for(var i = 0; i < arr.length; i++) dataModel.append(arr[i]);
+		}
 	}
 
 	// Параметры блока
@@ -182,6 +204,8 @@ Rectangle {
 							onClicked: {
 								// Скрываем блок
 								msgbox.visible = false;
+								// Разблокируем ранее запомненный блок
+								if(main) main.enabled = true;
 								// Отправляем сигнал щелчка
 								msgbox.buttonClick(model.index, model.text);
 							}

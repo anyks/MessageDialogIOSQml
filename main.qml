@@ -5,7 +5,6 @@ import QtQuick.Controls 1.4
 Window {
 	visible: true
 
-
 	MessageBoxAnyksiOS {
 		id:		msgBoxAnyks
 		title:	"Example Dialog"
@@ -20,18 +19,16 @@ Window {
 		anchors.fill: parent
 
 		mouseArea.onClicked: {
-
-			msgBoxAnyks.buttons.clear();
-
-			msgBoxAnyks.buttons.append({"text": "Cancel"});
-
-			msgBoxAnyks.buttons.append({
+			// Add buttons
+			msgBoxAnyks.addButtons([{
+				"text": "Cancel",
+			},{
 				"text":		"Ok",
 				"default":	true
-			});
+			}]);
 
-			msgBoxAnyks.open();
-
+			// Open Dialog box
+			msgBoxAnyks.open(this);
 		}
 	}
 }
