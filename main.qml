@@ -5,7 +5,7 @@ import QtQuick.Controls 1.4
 Window {
 	visible: true
 
-	MessageBoxAnyksiOS {
+	MessageBoxAnyksAndroid {
 		id:		msgBoxAnyks
 		title:	"Example Dialog"
 		text:	"It is an example dialog. Press any button to quit."

@@ -3,5 +3,6 @@
         <file>main.qml</file>
         <file>MainForm.ui.qml</file>
         <file>MessageBoxAnyksiOS.qml</file>
+        <file>MessageBoxAnyksAndroid.qml</file>
     </qresource>
 </RCC>
